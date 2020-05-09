@@ -32,6 +32,15 @@
     </div>
 
     <script>
+    document.getElementById('start_stop').addEventListener('click',function(){
+        var start = new Date();
+        window.setInterval(goTimer,10); //windowオブジェクトは省略可
+    });
+    var goTimer = function(){
+        var now = new Date();
+        document.getElementById('timer').innerHTML=now.getTime() - start.getElementById();
+    };
+    /*
         //0を追加する関数
         var addzero=function(value){
             if(value<10){
@@ -53,7 +62,7 @@
         //0～9時間の時、左0埋めする
         hours=addzero(hours);
         document.getElementById('timer').innerHTML=hours + ":"+ minutes + ":"+seconds;
-        });
+        }); */
         
     </script>
 </body>
