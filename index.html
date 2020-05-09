@@ -32,13 +32,17 @@
     </div>
 
     <script>
+    var start;
     document.getElementById('start_stop').addEventListener('click',function(){
-        var start = new Date();
+        start = new Date();
         window.setInterval(goTimer,10); //windowオブジェクトは省略可
     });
     var goTimer = function(){
         var now = new Date();
-        document.getElementById('timer').innerHTML=now.getTime() - start.getElementById();
+        var milli=now.getTime()-start.getTime();
+        var seconds=Math.floor(milli/1000);
+        document.getElementById('timer').innerHTML=seconds;
+
     };
     /*
         //0を追加する関数
